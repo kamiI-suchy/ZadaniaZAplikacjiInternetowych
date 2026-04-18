@@ -1,0 +1,9 @@
+Na podstawie omówionego przykładu należy z wykorzystaniem WebGL z kropek wyrysować swoje inicjały.
+Należy przesłać zrzut ekranu wyrenderowanych inicjałów.
+Należy przesłać zrzut fragmentu kodu renderowania z kropek.
+
+Biblioteka webgl-debug.js jest dostępna:
+https://github.com/KhronosGroup/WebGLDeveloperTools
+
+Przykład odniesienia
+https://www.rmaes.com/students/2023_2024/WebGL.pdf

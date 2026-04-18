@@ -1,0 +1,9 @@
+Przykład odniesienia:
+https://www.rmaes.com/students/2023_2024/Express.pdf
+Zmienić przykład tak, aby wszystkie etapy middleware były wywołane dla użytkownika, którego ID jest zmienione na Państwa nazwisko, tzn. przy podaniu w url Państwa nazwiska serwer ma wygenerować prawidłową odpowiedź. W przypadku podania innej wartości w url w miejscu nazwiska serwer ma wygenerować błąd 403.
+
+Należy wykonać zrzut ekranu url z Państwa nazwiskiem i prawidłową odpowiedzią serwera, która pojawi się w przeglądarce. Także dla tego przypadku należy wykonać zrzut ekranu konsoli serwera.
+
+Należy wykonać zrzut ekranu url z inną wartością zamiast nazwiska i wynikiem wyświetlonym w przeglądarce. Także dla tego przypadku należy wykonać zrzut ekranu konsoli serwera, aby było widoczne, jakie parametry odebrał serwer.
+
+Dodatkowo należy zrobić zrzut ekranu tych części kodów, co będą Państwo zmieniać, aby było widoczne, jaka odpowiedź została utworzona dla klienta.

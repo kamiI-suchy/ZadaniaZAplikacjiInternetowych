@@ -1,0 +1,3 @@
+Zadanie polega na narysowaniu na <canvas> swoich inicjałów. Inicjały muszą być narysowane za pomocą zdefiniowanej krzywej (beginPath()). Nie może to być drukowanie za pomocą fontów (np. fillText(), strokeText(), itp.). Dodatkowo styl linii musi być ustawiony na gradient.
+
+Należy przesłać zrzut ekranu z przeglądarki z inicjałami oraz zrzut ekranu (lub plik txt) kodu realizującego zadanie.

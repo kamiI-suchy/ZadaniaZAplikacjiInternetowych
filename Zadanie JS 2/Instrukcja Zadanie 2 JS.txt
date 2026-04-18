@@ -1,0 +1,4 @@
+Wybrać 15 różnych komponentów frontendu Bootstrap (lub innego) i umieścić je na jednej stronie. Mogą również pojawiać się komponenty z wykładu. Należy ponumerować komponenty w kolejności na stronie. W każdym komponencie należy wpisać swoje imię i nazwisko.
+Przesłać zrzuty ekranu lub udostępnić działającą stronę. Nie pakować plików.
+
+https://getbootstrap.com/docs/5.3/components/

@@ -1,0 +1,7 @@
+Umieścić w bazie danych minimum cztery rekordy w tym swoje imię i nazwisko. Wykonać zrzut ekranu utworzonej tabeli z rekordami.
+
+W przeglądarce wpisać adres skryptu php i podać id wiersza, gdzie jest Państwa imię i nazwisko.
+Zrobić zrzut ekranu z przeglądarki z adresem URL i wygenerowaną stroną.
+Zrobić taki sam zrzut ekranu, ale dla id wskazującego inny wiersz.
+
+Zrobić zrzut ekranu kodu php.
