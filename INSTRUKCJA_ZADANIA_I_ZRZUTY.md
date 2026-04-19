@@ -79,6 +79,27 @@
 - Zmodyfikować przykład middleware tak, by poprawna odpowiedź była dla URL z nazwiskiem (`userid`).
 - Dla innej wartości `userid` zwracać błąd 403.
 
+**Jak uruchomić:**
+1. Upewnij się, że masz zainstalowane **Node.js** (https://nodejs.org/, wersja 18+).
+2. Wejdź do folderu zadania:
+   ```
+   cd "Zadanie JS 5/Kod z pliku PDF"
+   ```
+3. Zainicjuj projekt i zainstaluj Express:
+   ```
+   npm init -y
+   npm install express
+   ```
+4. Uruchom serwer:
+   ```
+   node server.mjs
+   ```
+   Konsola powinna wypisać: `MyServer ready on http://localhost:3000!`
+5. Otwórz w przeglądarce:
+   - Poprawny przypadek (kod 200): `http://localhost:3000/user/suchy/book/1`
+   - Błędny przypadek (kod 403): `http://localhost:3000/user/inny/book/1`
+6. Zatrzymaj serwer skrótem **Ctrl + C**.
+
 **Co wysłać (dowody):**
 - Zrzut URL z nazwiskiem + poprawna odpowiedź w przeglądarce.
 - Zrzut konsoli serwera dla powyższego przypadku.
@@ -96,6 +117,20 @@
 **Co zrobić:**
 - Utworzyć tabelę i dodać min. 4 rekordy (w tym własne imię i nazwisko).
 - W przeglądarce wywołać skrypt PHP z `id` wskazującym swój rekord oraz inny rekord.
+
+**Jak uruchomić:**
+1. Zainstaluj **XAMPP** (https://www.apachefriends.org/) i uruchom moduły **Apache** oraz **MySQL** z panelu XAMPP Control Panel.
+2. Zaimportuj bazę danych — w wierszu poleceń:
+   ```
+   mysql -u root -p < "Zadanie PHP 1/Kod z pliku PDF/setup.sql"
+   ```
+   (hasło root w XAMPP domyślnie jest puste — wciśnij Enter)  
+   Alternatywnie: otwórz **phpMyAdmin** (`http://localhost/phpmyadmin`), wybierz zakładkę „Import” i wskaż plik `setup.sql`.
+3. Skopiuj folder `Zadanie PHP 1/Kod z pliku PDF/` do katalogu `C:\\xampp\\htdocs\\php1\\` (Windows) lub `/opt/lampp/htdocs/php1/` (Linux/Mac).
+4. Otwórz w przeglądarce:
+   - Własny rekord (Kamil Suchy, id=1): `http://localhost/php1/index.php?id=1`
+   - Inny rekord: `http://localhost/php1/index.php?id=2`
+5. Sprawdź tabelę w phpMyAdmin: baza `MyDB`, tabela `MyTable`.
 
 **Co wysłać (dowody):**
 - Zrzut tabeli z rekordami.

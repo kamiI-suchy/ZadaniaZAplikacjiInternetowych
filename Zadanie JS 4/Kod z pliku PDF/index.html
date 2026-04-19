@@ -86,15 +86,14 @@
             addLine(-0.85, 0.05, -0.45, -0.7)
 
             // S
-            addLine(0.58, 0.7, 0.2, 0.7)
-            addLine(0.2, 0.7, 0.12, 0.48)
-            addLine(0.12, 0.48, 0.22, 0.28)
-            addLine(0.22, 0.28, 0.52, 0.15)
-            addLine(0.52, 0.15, 0.58, -0.02)
-            addLine(0.58, -0.02, 0.46, -0.22)
-            addLine(0.46, -0.22, 0.18, -0.32)
-            addLine(0.18, -0.32, 0.08, -0.5)
-            addLine(0.08, -0.5, 0.45, -0.7)
+            addLine(0.55, 0.70,  0.15, 0.70)  // pasek górny: prawy → lewy
+            addLine(0.15, 0.70,  0.10, 0.48)  // lewa krawędź górnego łuku – w dół
+            addLine(0.10, 0.48,  0.20, 0.22)  // dół górnego łuku – skręt w prawo
+            addLine(0.20, 0.22,  0.40, 0.08)  // podejście do środka od lewej
+            addLine(0.40, 0.08,  0.58, -0.08) // talii S – przejście ze środka w prawo
+            addLine(0.58, -0.08, 0.60, -0.32) // prawa krawędź dolnego łuku – w dół
+            addLine(0.60, -0.32, 0.48, -0.55) // dół dolnego łuku – skręt w lewo
+            addLine(0.48, -0.55, 0.15, -0.70) // pasek dolny: prawy → lewy
 
             const data = new Float32Array(points)
             const FSIZE = data.BYTES_PER_ELEMENT
