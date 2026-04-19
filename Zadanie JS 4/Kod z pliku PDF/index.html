@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebGL</title>
+    <meta charset="utf-8">
+
+    <script type="text/javascript" src="lib/webgl-debug.js"></script>
+
+    <style>
+        body {
+            background-color: grey;
+        }
+
+        canvas {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="id_Canvas" width="400" height="300">
+        Your browser does not support the HTML5 canvas element.
+    </canvas>
+
+    <script type="module">
+
+        import MyWebGL from "./MyWebGL.js"
+
+        const astrVertexShader =
+            "attribute vec4 a_Position; \n" +
+            "attribute float a_PointSize; \n" +
+            "void main() { \n" +
+            "   gl_Position = a_Position; \n" +
+            "   gl_PointSize = a_PointSize; \n" +
+            "} \n";
+
+        const astrFragmentShader =
+            "precision mediump float;\n" +
+            "uniform vec4 u_FragColor;\n" +
+            "void main() {\n" +
+            "   gl_FragColor = u_FragColor;\n" +
+            "} \n";
+
+        window.onload = () => {
+            const aMyWebGL = new MyWebGL();
+            const aCanvas = document.getElementById("id_Canvas");
+            const gl = aMyWebGL.initGL(aCanvas, true)
+            if (!gl) {
+                console.error("Failed to get the rendering context for WebGL");
+                return
+            }
+            const aProgram = aMyWebGL.initShadersAndMakeCurrent(astrVertexShader, astrFragmentShader);
+            if (!aProgram) {
+                console.error("!aProgram");
+                return
+            }
+            const a_Position = gl.getAttribLocation(aProgram, "a_Position");
+            if (0 > a_Position) {
+                console.error("Failed to get the storage location of a_Position")
+                return
+            }
+            const a_PointSize = gl.getAttribLocation(aProgram, "a_PointSize");
+            if (0 > a_PointSize) {
+                console.error("Failed to get the storage location of a_PointSize")
+                return;
+            }
+            const u_FragColor = gl.getUniformLocation(aProgram, "u_FragColor");
+            if (!u_FragColor) {
+                console.error("Failed to get the storage location of u_FragColor")
+                return
+            }
+            gl.vertexAttrib3f(a_Position, 0.5, 0.0, 0.0)
+            gl.vertexAttrib1f(a_PointSize, 15.0)
+            gl.uniform4f(u_FragColor, 0.0, 1.0, 0.0, 1.0)
+            gl.clearColor(0.0, 0.0, 0.0, 1.0)
+            gl.clear(gl.COLOR_BUFFER_BIT)
+            gl.drawArrays(gl.POINTS, 0, 1)
+        }
+    </script>
+</body>
+</html>
