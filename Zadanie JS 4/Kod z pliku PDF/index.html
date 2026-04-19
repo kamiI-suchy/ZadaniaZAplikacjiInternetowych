@@ -5,8 +5,6 @@
     <title>WebGL</title>
     <meta charset="utf-8">
 
-    <script type="text/javascript" src="lib/webgl-debug.js"></script>
-
     <style>
         body {
             background-color: grey;
@@ -29,10 +27,10 @@
         import MyWebGL from "./MyWebGL.js"
 
         const astrVertexShader =
-            "attribute vec4 a_Position; \n" +
+            "attribute vec2 a_Position; \n" +
             "attribute float a_PointSize; \n" +
             "void main() { \n" +
-            "   gl_Position = a_Position; \n" +
+            "   gl_Position = vec4(a_Position, 0.0, 1.0); \n" +
             "   gl_PointSize = a_PointSize; \n" +
             "} \n";
 
@@ -46,7 +44,7 @@
         window.onload = () => {
             const aMyWebGL = new MyWebGL();
             const aCanvas = document.getElementById("id_Canvas");
-            const gl = aMyWebGL.initGL(aCanvas, true)
+            const gl = aMyWebGL.initGL(aCanvas, false)
             if (!gl) {
                 console.error("Failed to get the rendering context for WebGL");
                 return
@@ -71,12 +69,46 @@
                 console.error("Failed to get the storage location of u_FragColor")
                 return
             }
-            gl.vertexAttrib3f(a_Position, 0.5, 0.0, 0.0)
-            gl.vertexAttrib1f(a_PointSize, 15.0)
+            const points = []
+            const addPoint = (x, y, size = 8) => points.push(x, y, size)
+            const addLine = (x1, y1, x2, y2, step = 0.08, size = 8) => {
+                const distance = Math.hypot(x2 - x1, y2 - y1)
+                const count = Math.max(2, Math.ceil(distance / step))
+                for (let i = 0; i <= count; i++) {
+                    const t = i / count
+                    addPoint(x1 + (x2 - x1) * t, y1 + (y2 - y1) * t, size)
+                }
+            }
+
+            // K
+            addLine(-0.85, 0.7, -0.85, -0.7)
+            addLine(-0.85, 0.05, -0.45, 0.7)
+            addLine(-0.85, 0.05, -0.45, -0.7)
+
+            // S
+            addLine(0.55, 0.7, 0.15, 0.7)
+            addLine(0.15, 0.7, 0.15, 0.15)
+            addLine(0.15, 0.15, 0.55, 0.15)
+            addLine(0.55, 0.15, 0.55, -0.35)
+            addLine(0.55, -0.35, 0.15, -0.35)
+            addLine(0.15, -0.35, 0.15, -0.7)
+            addLine(0.15, -0.7, 0.55, -0.7)
+
+            const data = new Float32Array(points)
+            const FSIZE = data.BYTES_PER_ELEMENT
+            const buffer = gl.createBuffer()
+            gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+            gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW)
+
+            gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, FSIZE * 3, 0)
+            gl.enableVertexAttribArray(a_Position)
+            gl.vertexAttribPointer(a_PointSize, 1, gl.FLOAT, false, FSIZE * 3, FSIZE * 2)
+            gl.enableVertexAttribArray(a_PointSize)
+
             gl.uniform4f(u_FragColor, 0.0, 1.0, 0.0, 1.0)
             gl.clearColor(0.0, 0.0, 0.0, 1.0)
             gl.clear(gl.COLOR_BUFFER_BIT)
-            gl.drawArrays(gl.POINTS, 0, 1)
+            gl.drawArrays(gl.POINTS, 0, data.length / 3)
         }
     </script>
 </body>

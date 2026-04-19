@@ -26,17 +26,17 @@ app.get('/about/contact',
 app.use('myStorage', express.static('myimages'))
 
 app.get('/user/:userid/book/:bookid', (req, res, next) => {
-    const aUserId = req.params.userid,
+    const aUserId = req.params.userid?.toLowerCase(),
         aBookId = req.params.bookid
 
     console.log(`UserID=${aUserId}`)
     console.log(`BookID=${aBookId}`)
 
-    if ('45' !== aUserId) {
+    if ('suchy' !== aUserId) {
         next(403)
         return
     }
-    res.rmaes = {
+    res.locals.userData = {
         UserID: aUserId,
         BookID: aBookId
     }
@@ -45,8 +45,8 @@ app.get('/user/:userid/book/:bookid', (req, res, next) => {
 
 app.get('/user/:userid/book/:bookid', 
     (req, res) => {
-        const rmaes = res.rmaes;
-        res.send(`My user=${rmaes.UserID} and My Book=${rmaes.BookID}`)
+        const userData = res.locals.userData;
+        res.send(`My user=${userData.UserID} and My Book=${userData.BookID}`)
 })
 
 app.use(function (err, req, res, next) {
