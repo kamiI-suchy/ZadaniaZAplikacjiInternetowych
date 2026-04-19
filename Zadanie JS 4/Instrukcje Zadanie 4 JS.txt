@@ -1,9 +1,14 @@
-Na podstawie omówionego przykładu należy z wykorzystaniem WebGL z kropek wyrysować swoje inicjały.
-Należy przesłać zrzut ekranu wyrenderowanych inicjałów.
-Należy przesłać zrzut fragmentu kodu renderowania z kropek.
-
-Biblioteka webgl-debug.js jest dostępna:
-https://github.com/KhronosGroup/WebGLDeveloperTools
-
-Przykład odniesienia
-https://www.rmaes.com/students/2023_2024/WebGL.pdf
+1. Na podstawie omówionego przykładu należy z wykorzystaniem WebGL z kropek wyrysować swoje inicjały.
+2. Należy przesłać zrzut ekranu wyrenderowanych inicjałów.
+3. Należy przesłać zrzut fragmentu kodu renderowania z kropek.
+4.
+5. Biblioteka webgl-debug.js jest dostępna:
+6. https://github.com/KhronosGroup/WebGLDeveloperTools
+7.
+8. Przykład odniesienia
+9. https://www.rmaes.com/students/2023_2024/WebGL.pdf
+10.
+11. Uwaga dot. uruchamiania:
+12. Nie uruchamiać index.html przez file://, bo przeglądarka blokuje importy modułów JS (CORS).
+13. Uruchomić folder "Kod z pliku PDF" przez lokalny serwer HTTP (np. Live Server w VS Code albo python -m http.server).
+14. Otwierać stronę adresem http://localhost:.../index.html
