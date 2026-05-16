@@ -181,11 +181,12 @@
    cd "Zadanie TS 1"
    ```
 2. Utwórz nowy projekt Angular (nazwa zgodna z kodem: `simple-app`):
+   - Uwaga: w Angular 17+ domyślny komponent główny to `app.ts` (nie `app.component.ts`).
    ```
    ng new simple-app --standalone --routing=false --style=css
    ```
    Gdy CLI zapyta o SSR/SSG, wybierz `No`.
-3. Skopiuj pliki zadania do `src/app` wygenerowanego projektu:
+3. Skopiuj pliki zadania do `src/app` wygenerowanego projektu (polecenia wykonuj nadal z folderu `Zadanie TS 1`, gdzie znajdują się pliki `app.ts`, `app.html` itd.):
    ```
    cp ./app.ts ./simple-app/src/app/app.ts
 

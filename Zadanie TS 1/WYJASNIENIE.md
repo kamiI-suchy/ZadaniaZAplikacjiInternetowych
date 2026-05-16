@@ -207,6 +207,14 @@ p {
 
 ---
 
+
+## Uwaga o nazewnictwie Angular
+
+W tym zadaniu użyta jest współczesna konwencja Angular (17+), gdzie komponent główny ma pliki `app.ts`, `app.html`, `app.css`.
+Nie jest to błąd — starsza konwencja `app.component.ts` nadal bywa spotykana, ale tutaj poprawna jest wersja z `app.ts`.
+
+---
+
 ## Podsumowanie
 Kod poprawnie demonstruje podstawy Angular:
 - kompozycję komponentów,
