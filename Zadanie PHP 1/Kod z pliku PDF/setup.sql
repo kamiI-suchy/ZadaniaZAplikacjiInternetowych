@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS MyTable (
 );
 
 INSERT INTO MyTable (FirstName, Surname, Age) VALUES
-('Kamil', 'Suchy', 23),
+('Kamil', 'Suchy', 20),
 ('Anna', 'Nowak', 30),
 ('Piotr', 'Kowalski', 28),
 ('Ewa', 'Wiśniewska', 35);
