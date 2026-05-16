@@ -5,6 +5,7 @@ import { MyBuilding } from './my-building';
 
 @Component({
     selector: 'app-root',
+    standalone: true,
     imports: [MyStudent, UpperCasePipe, LowerCasePipe, CurrencyPipe],
     templateUrl: './app.html',
     styleUrl: './app.css'
@@ -15,7 +16,7 @@ export class App {
     protected myData = {
         name: "Kamil",
         surname: "Suchy"
-    }
+    };
 
     protected vBuildings = [
         new MyBuilding(7, "Blue house"),
@@ -24,15 +25,14 @@ export class App {
     ];
     protected selectedBuilding?: MyBuilding;
 
-    protected bToggle = false
+    protected bToggle = false;
 
     protected myCount = signal(0);
 
     onMyToggle() {
-        this.bToggle = !this.bToggle
-        console.log(this.bToggle)
+        this.bToggle = !this.bToggle;
 
-        this.myCount.set(this.myCount() + 1)
+        this.myCount.set(this.myCount() + 1);
     }
 
     constructor() {

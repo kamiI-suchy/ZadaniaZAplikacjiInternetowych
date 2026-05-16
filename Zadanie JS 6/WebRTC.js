@@ -55,10 +55,10 @@ function onReady() {
             avAudioTracks = aMediaStreamLocalA.getAudioTracks();
         
         if (0 < avVideoTracks.length) {
-            console.log('Using video device: ${avVideoTracks[0].label}')
+            console.log(`Using video device: ${avVideoTracks[0].label}`)
         }
         if (0 < avAudioTracks.length) {
-            console.log('Using audio device: ${avAudioTracks[0].label}')
+            console.log(`Using audio device: ${avAudioTracks[0].label}`)
         }
 
         createPeerConnection_ComputerA()
@@ -95,9 +95,17 @@ function onReady() {
     }
 
     function cbICECandidate_ComputerA(event) {
+        if (!event.candidate) {
+            console.log("ComputerA ICECandidate gathering complete")
+            return
+        }
         sendICECandidateToComputerB(event.candidate)
     }
     function cbICECandidate_ComputerB(event) {
+        if (!event.candidate) {
+            console.log("ComputerB ICECandidate gathering complete")
+            return
+        }
         sendICECandidateToComputerA(event.candidate)
     }
 
@@ -123,6 +131,9 @@ function onReady() {
     function cbTrack_ComputerB(event) {
         console.log("ComputerB received remote stream from ComputerA")
         const aMediaStream = event.streams[0];
+        if (aVideoLocalB.srcObject !== aMediaStream) {
+            aVideoLocalB.srcObject = aMediaStream
+        }
         if (aVideoRemoteA.srcObject !== aMediaStream) {
             aVideoRemoteA.srcObject = aMediaStream
         }
