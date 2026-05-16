@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>WebRTC</title>
+
+    <script src="WebRTC.js"></script>
+    <style>
+        video {
+            border: 1px solid black;
+            max-width: 120px;
+            max-height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    Computer A
+    <br />
+    <video id="idVideoLocalA" muted autoplay></video>
+    <video id="idVideoRemoteB" muted autoplay></video>
+    <br />
+    <input type="button" id="idButtonStart" value="Start" />
+    <input type="button" id="idButtonCall" value="Call" disabled="disabled" />
+    <input type="button" id="idButtonHangup" value="Hang Up" disabled="disabled" />
+    <br />
+
+    Computer B
+    <br />
+    <video id="idVideoLocalB" muted autoplay></video>
+    <video id="idVideoRemoteA" muted autoplay></video>
+
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+Nagrać film z przebiegu procesu nawiązania połączenia WebRTC dla obrazu wideo.
+Przesłać plik tekstowy z konsoli przeglądarki, gdzie będą informacje z przebiegu całego procesu nawiązywania połączenia WebRTC dla strumienia wideo.
+
+Przykład odniesienia:
+https://www.rmaes.com/students/2023_2024/WebRTC.pdf

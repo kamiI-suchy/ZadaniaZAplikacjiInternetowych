@@ -1,0 +1,14 @@
+Przykład odniesienia:
+https://www.rmaes.com/students/2025_2026/Angular.pdf
+Należy uruchomić omówiony przykład w Angular. Zmienić wartość pola w komponencie na swoje imię i nazwisko.
+Zrobić zrzut ekranu z przeglądarki z adresem URL i wyrenderowaną zawartością aplikacji (ze swoim imieniem i nazwiskiem).
+Zrobić drugi zrzut ekranu zbudowanej struktury DOM, aby było widoczne, że została wykorzystana biblioteka Angular.
+
+Przykład obejmuje funkcjonalność:
+1. Swój komponent.
+2. Przechowywanie parametrów w komponencie (imię i nazwisko).
+3. Drugi komponent osadzony w pierwszym komponencie.
+4. Zastosowanie UpperCasePipe, LowerCasePipe, CurrencyPipe
+5. Klasa z danymi. Kilka instancji klasy i prezentacja ich wartości wykorzystując @for i @if.
+6. W komponencie wartość korzystająca z signal(), która będzie zmieniana przez wciśnięcie przycisku. Prezentacja zmian wartości.
+7. Zmienna wartość, która będzie modyfikowała atrybut w DOM.
