@@ -36,6 +36,6 @@ export class App {
     }
 
     constructor() {
-        this.selectedBuilding = this.vBuildings[0]
+        this.selectedBuilding = this.vBuildings[0];
     }
 }
