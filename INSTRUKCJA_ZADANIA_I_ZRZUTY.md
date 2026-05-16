@@ -127,7 +127,7 @@
 **Jak uruchomić (krok po kroku):**
 1. Wejdź do folderu zadania:
    ```
-   cd "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie JS 6"
+   cd "Zadanie JS 6"
    ```
 2. Uruchom lokalny serwer HTTP:
    ```
@@ -178,7 +178,7 @@
 **Jak uruchomić (krok po kroku):**
 1. Wejdź do folderu z zadaniem:
    ```
-   cd "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1"
+   cd "Zadanie TS 1"
    ```
 2. Utwórz nowy projekt Angular (nazwa zgodna z kodem: `simple-app`):
    ```
@@ -187,23 +187,23 @@
    Gdy CLI zapyta o SSR/SSG, wybierz `No`.
 3. Skopiuj pliki zadania do `src/app` wygenerowanego projektu:
    ```
-   cp "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/app.ts"       "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app/src/app/app.ts"
+   cp ./app.ts ./simple-app/src/app/app.ts
 
-   cp "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/app.html"       "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app/src/app/app.html"
+   cp ./app.html ./simple-app/src/app/app.html
 
-   cp "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/app.css"       "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app/src/app/app.css"
+   cp ./app.css ./simple-app/src/app/app.css
 
-   cp "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/my-student.ts"       "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app/src/app/my-student.ts"
+   cp ./my-student.ts ./simple-app/src/app/my-student.ts
 
-   cp "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/my-student.html"       "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app/src/app/my-student.html"
+   cp ./my-student.html ./simple-app/src/app/my-student.html
 
-   cp "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/my-student.css"       "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app/src/app/my-student.css"
+   cp ./my-student.css ./simple-app/src/app/my-student.css
 
-   cp "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/my-building.ts"       "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app/src/app/my-building.ts"
+   cp ./my-building.ts ./simple-app/src/app/my-building.ts
    ```
 4. Uruchom aplikację:
    ```
-   cd "/home/runner/work/ZadaniaZAplikacjiInternetowych/ZadaniaZAplikacjiInternetowych/Zadanie TS 1/simple-app"
+   cd simple-app
    ng serve --open
    ```
 5. Otwórz adres (jeśli nie otworzył się automatycznie):
