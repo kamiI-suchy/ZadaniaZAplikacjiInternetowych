@@ -188,6 +188,93 @@ Express dopasowuje trasę: /user/:userid/book/:bookid
 
 ---
 
+## Zadanie JS 6 – WebRTC (peer-to-peer audio/wideo)
+
+### Jak działa
+Aplikacja symuluje dwa komputery (A i B) w jednej stronie i zestawia połączenie WebRTC.
+Wymiana sygnalizacji (offer/answer/ICE) jest przekazywana lokalnie przez funkcje JS,
+bez zewnętrznego serwera sygnalizacyjnego.
+
+```
+Kliknięcie Start
+        ↓
+getUserMedia({audio:true, video:true}) pobiera lokalny strumień z kamery/mikrofonu
+        ↓
+Lokalny stream trafia do <video idVideoLocalA>
+        ↓
+Kliknięcie Call
+        ↓
+Tworzony jest RTCPeerConnection dla ComputerA
+        ↓
+Tracki audio/wideo są dodawane przez addTransceiver(...)
+        ↓
+onnegotiationneeded → createOffer → setLocalDescription
+        ↓
+Offer przekazywany do ComputerB
+        ↓
+ComputerB: setRemoteDescription(offer) → createAnswer → setLocalDescription(answer)
+        ↓
+Answer przekazywany do ComputerA → setRemoteDescription(answer)
+        ↓
+Obie strony wymieniają ICE candidate przez onicecandidate + addIceCandidate
+        ↓
+Połączenie przechodzi do stanu connected, a event ontrack ustawia streamy w <video>
+        ↓
+Kliknięcie Hang Up zamyka oba RTCPeerConnection
+```
+
+### Kluczowe koncepcje
+| Pojęcie | Opis |
+|---|---|
+| **WebRTC** | Standard przeglądarkowy do transmisji audio/wideo peer-to-peer |
+| **RTCPeerConnection** | Główny obiekt połączenia WebRTC (negocjacja, ICE, tracki) |
+| **SDP Offer/Answer** | Opis parametrów połączenia wymieniany między peerami |
+| **ICE Candidate** | Informacje o możliwych trasach sieciowych do zestawienia połączenia |
+| **getUserMedia** | API do pobierania lokalnego strumienia kamery/mikrofonu |
+| **ontrack** | Zdarzenie wywoływane po odebraniu zdalnego strumienia |
+| **onnegotiationneeded** | Zdarzenie uruchamiające proces tworzenia oferty SDP |
+| **State callbacks** | Logowanie `iceConnectionState`, `iceGatheringState`, `signalingState`, `connectionState` pomaga diagnostycznie |
+
+---
+
+## Zadanie TS 1 – Angular (komponenty, pipe, control flow, signals)
+
+### Jak działa
+Aplikacja Angular składa się z komponentu głównego `App` i komponentu potomnego `MyStudent`.
+Dane są renderowane przez bindingi szablonu, a interakcja przycisku modyfikuje stan komponentu.
+
+```
+Angular bootstrapuje App (selector: app-root)
+        ↓
+Szablon app.html renderuje dane myData, listę vBuildings i komponenty <app-my-student>
+        ↓
+Pipe'y (lowercase/uppercase/currency) formatują wartości w czasie renderowania
+        ↓
+@for iteruje po vBuildings i tworzy <li> dla każdego elementu
+        ↓
+@if wyświetla blok tylko gdy selectedBuilding istnieje
+        ↓
+Kliknięcie MyToggle uruchamia onMyToggle()
+        ↓
+bToggle zmienia wartość logiczną (wpływa na [disabled] przycisku)
+        ↓
+myCount (signal) zwiększa licznik i odświeża widok reaktywnie
+```
+
+### Kluczowe koncepcje
+| Pojęcie | Opis |
+|---|---|
+| **Standalone component** | Komponent działa bez klasycznego `NgModule` |
+| **Template binding (`{{ }}`)** | Wstawianie wartości z klasy komponentu do HTML |
+| **Property binding (`[disabled]`)** | Wiązanie atrybutu DOM z wartością logiczną w komponencie |
+| **Event binding (`(click)`)** | Reakcja na zdarzenie użytkownika i wywołanie metody klasy |
+| **Pipes** | Transformacje prezentacji danych (`uppercase`, `lowercase`, `currency`) |
+| **`@for` i `@if`** | Nowa składnia kontrolna Angular do iteracji i warunków w szablonie |
+| **`signal()`** | Reaktywny kontener stanu; aktualizacja sygnału automatycznie odświeża widok |
+| **Komponent potomny** | `MyStudent` osadzony wewnątrz `App` przez selektor `app-my-student` |
+
+---
+
 ## Zadanie PHP 1 – PHP + MySQL (skrypt CGI z bazą danych)
 
 ### Jak działa
