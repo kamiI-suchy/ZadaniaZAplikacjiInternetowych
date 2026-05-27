@@ -1,0 +1,29 @@
+<h1>My component</h1>
+
+<div>{{myData.name}}</div>
+<div>{{myData.surname}}</div>
+
+<app-my-student></app-my-student>
+<app-my-student></app-my-student>
+
+<div>{{myData.name | lowercase}}</div>
+<div>{{myData.name | uppercase}}</div>
+
+<ul>
+@for (building of vBuildings; track building) {
+  <li>
+    {{building.name}} {{building.price | currency: "PLN"}}
+  </li>
+}
+</ul>
+
+@if (selectedBuilding) {
+  <p>
+    Wybrany={{selectedBuilding.name}}
+  </p>
+}
+
+<button (click)="onMyToggle()">MyToggle</button>
+<h2>Licznik: {{ myCount() }}</h2>
+<br/><br/>
+<button [disabled]="bToggle">Attribute binding</button>
